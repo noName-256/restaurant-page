@@ -1,0 +1,220 @@
+$color_1: #212529;
+$background-color_1: #bdb8be;
+$background-color_2: currentColor;
+
+@media only screen and (max-width: 500px) {
+  main #website-name.menus ~ .top-section .slogan .text {
+    font-size: 2.5rem;
+  }
+}
+main {
+  #website-name.menus ~ {
+    .top-section .background-image {
+      background-image: url(../../assets/images/menu.jpg);
+    }
+    .section-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      background-color: $background-color_1;
+      color: $color_1;
+      .header {
+        text-align: center;
+        .title {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+        .text {
+          font-size: 1.3rem;
+          opacity: 0.6;
+        }
+      }
+      nav {
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          font-weight: 600;
+          li {
+            position: relative;
+            cursor: pointer;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 4px;
+              transform: translate(0, 5px);
+              background-color: $background-color_2;
+              transition: all 0.2s ease-out;
+            }
+            &:hover {
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      nav.breakfast {
+        ul {
+          li.breakfast {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+        + {
+          .dishes-grid {
+            .dishes-section.breakfast {
+              height: 500px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      nav.lunch {
+        ul {
+          li.lunch {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+        + {
+          .dishes-grid {
+            .dishes-section.lunch {
+              height: 500px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      nav.dinner {
+        ul {
+          li.dinner {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+        + {
+          .dishes-grid {
+            .dishes-section.dinner {
+              height: 500px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      nav.drinks {
+        ul {
+          li.drinks {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+        + {
+          .dishes-grid {
+            .dishes-section.drinks {
+              height: 500px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .dishes-grid {
+        height: 1100px;
+        width: 100%;
+        overflow: hidden;
+        .dishes-section {
+          height: 0;
+          width: 100%;
+          opacity: 0;
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-content: center;
+          align-content: start;
+          gap: 20px;
+          transition: opacity 0.2s ease-out;
+          .dish {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+            text-transform: capitalize;
+            font-size: 1.3rem;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #212529;
+            z-index: 500;
+            .image {
+              object-fit: cover;
+              object-position: center;
+              height: 80px;
+              width: 80px;
+              border-radius: 4px;
+            }
+            .price {
+              margin-left: auto;
+              font-size: 1.5rem;
+              font-weight: bold;
+            }
+            &:hover {
+              .price {
+                animation: jiggle forwards ease-out 0.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 800px) {
+  main {
+    #website-name.menus {
+      ~ {
+        .section-1 {
+          gap: 100px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main #website-name.menus ~ {
+    .section-1 {
+      nav ul {
+        gap: 50px;
+        font-size: 1.5rem;
+        li {
+          &::after {
+            transform: translate(0, 7.5px);
+          }
+        }
+      }
+
+      .dishes-grid {
+        height: 800px;
+        .dishes-section {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px 60px;
+          .dish {
+            .image {
+              background-size: cover;
+              background-position: center;
+              height: 120px;
+              width: 120px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+main #website-name.about-us {
+  & ~ .top-section .background-image {
+    background-image: url(../../assets/images/about-us.jpg) !important;
+    background-size: cover !important;
+  }
+  & ~ .section-1 .image {
+    background-image: url(../../assets/images/image-8.jpg) !important;
+    background-size: 130% !important;
+  }
+  & ~ .section-2 {
+    background-color: #dadfe3 !important;
+    color: #212529 !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    .quote-marks {
+      width: 100%;
+
+      font-size: 100px;
+      font-family: "Secular One";
+      text-align: center;
+
+      color: #faa836;
+    }
+    .quote {
+      font-size: 2rem;
+      text-align: center;
+
+      width: 80%;
+      transform: translate(0, -30px);
+    }
+    .quote-author {
+      font-size: 1.5rem;
+      opacity: 0.8;
+    }
+  }
+  & ~ .section-3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    color: var(--text-color);
+    background-color: var(--color1);
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+      .text {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 30px;
+      width: 90%;
+    }
+  }
+  & ~ .section-3 .content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    width: 90%;
+    .text {
+      h1 {
+        font-size: min(7vw, 2rem);
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+    .image {
+      background-image: url(../../assets/images//chef.jpg);
+      background-size: cover;
+      background-position: 20%;
+      width: 90vw;
+      aspect-ratio: 16/12;
+    }
+  }
+}
+@media only screen and (min-width: 800px) {
+  main #website-name.about-us {
+    & ~ .section-2 .quote {
+      width: 60%;
+    }
+    & ~ .section-3 {
+      padding-bottom: 80px;
+      .header {
+        width: 40%;
+      }
+      .content {
+        flex-direction: row;
+        gap: 9vw;
+        justify-content: center;
+        align-items: center;
+        .text,
+        .image {
+          width: min(45%, 600px);
+        }
+        .text p {
+          font-size: min(1.3vw, 1.5rem);
+        }
+        .image {
+          box-shadow: 50px 40px 10px rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main #website-name.about-us {
+    & ~ .top-section .slogan {
+      top: 20%;
+      left: 87%;
+    }
+  }
+}

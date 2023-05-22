@@ -1,0 +1,148 @@
+/* #region top-section */
+main #website-name.about-us ~ .top-section .background-image {
+  background-image: url(../../assets/images/about-us.jpg) !important;
+  background-size: cover !important;
+}
+/* #endregion */
+
+/* #region secion-1 */
+main #website-name.about-us ~ .section-1 .image {
+  background-image: url(../../assets/images/image-8.jpg) !important;
+  background-size: 130% !important;
+}
+/* #endregion */
+
+/* #region section-2 */
+main #website-name.about-us ~ .section-2 {
+  background-color: #dadfe3 !important;
+  color: #212529 !important;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+main #website-name.about-us ~ .section-2 .quote-marks {
+  width: 100%;
+
+  font-size: 100px;
+  font-family: "Secular One";
+  text-align: center;
+
+  color: #faa836;
+}
+main #website-name.about-us ~ .section-2 .quote {
+  font-size: 2rem;
+  text-align: center;
+
+  width: 80%;
+  transform: translate(0, -30px);
+}
+
+main #website-name.about-us ~ .section-2 .quote-author {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+/* #endregion */
+/* #region section-3 */
+main #website-name.about-us ~ .section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  color: var(--text-color);
+  background-color: var(--color1);
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* #region header */
+main #website-name.about-us ~ .section-3 .header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+
+  text-align: center;
+
+  width: 90%;
+}
+main #website-name.about-us ~ .section-3 .header .title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+main #website-name.about-us ~ .section-3 .header .text {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+/* #endregion */
+/* #region content */
+main #website-name.about-us ~ .section-3 .content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
+  width: 90%;
+}
+main #website-name.about-us ~ .section-3 .content .text h1 {
+  font-size: min(7vw, 2rem);
+  margin-bottom: 20px;
+}
+main #website-name.about-us ~ .section-3 .content .text p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+main #website-name.about-us ~ .section-3 .content .image {
+  background-image: url(../../assets/images//chef.jpg);
+  background-size: cover;
+  background-position: 20%;
+  width: 90vw;
+  aspect-ratio: 16/12;
+}
+/* #endregion */
+/* #endregion */
+@media only screen and (min-width: 800px) {
+  /* #region section-2 */
+  main #website-name.about-us ~ .section-2 .quote {
+    width: 60%;
+  }
+  /* #endregion */
+  /* #region section-3 */
+  main #website-name.about-us ~ .section-3 {
+    padding-bottom: 80px;
+  }
+  /* #region header */
+  main #website-name.about-us ~ .section-3 .header {
+    width: 40%;
+  }
+  /* #endregion */
+  /* #region content */
+  main #website-name.about-us ~ .section-3 .content {
+    flex-direction: row;
+    gap: 9vw;
+    justify-content: center;
+    align-items: center;
+  }
+  main #website-name.about-us ~ .section-3 .content .text,
+  main #website-name.about-us ~ .section-3 .content .image {
+    width: min(45%, 600px);
+  }
+  main #website-name.about-us ~ .section-3 .content .text p {
+    font-size: min(1.3vw, 1.5rem);
+  }
+  main #website-name.about-us ~ .section-3 .content .image {
+    box-shadow: 50px 40px 10px rgba(255, 255, 255, 0.6);
+  }
+  /* #endregion */
+  /* #endregion */
+}
+@media only screen and (min-width: 1200px) {
+  /* #region top-section */
+  main #website-name.about-us ~ .top-section .slogan {
+    top: 20%;
+    left: 87%;
+  }
+  /* #endregion */
+}

@@ -1,0 +1,205 @@
+$color_1: #212529;
+$color_2: #3952a4;
+$color_3: #171719;
+$color_4: white;
+$color_5: var(--text-color);
+$background-color_1: #e2dbd2;
+$background-color_2: transparent;
+$background-color_3: #171719;
+$background-color_4: hsl(200, 5%, 7%);
+$border-color_1: black;
+$border-color_2: #171719;
+$border-color_3: white;
+
+main #website-name.contact ~ {
+  .top-section {
+    .background-image {
+      background-image: url(../../assets/images/contact.jpg);
+      background-position: 30%;
+      background-position-x: 20%;
+    }
+  }
+  .section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-color: $background-color_1;
+    color: $color_1;
+    .header {
+      text-align: center;
+      .title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.1rem;
+        opacity: 0.6;
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title {
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        a {
+          color: $color_2;
+          text-decoration: underline;
+        }
+        .address {
+          opacity: 0.6;
+        }
+      }
+      form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        .hidden {
+          width: 0;
+          overflow: hidden;
+          position: absolute;
+        }
+        .form-element {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 15px;
+          border-radius: 0;
+          border: 2px solid #8c8e9a;
+          background-color: $background-color_2;
+          outline: none;
+          font-size: 1.5rem;
+          &:focus-visible {
+            border-color: $border-color_1;
+          }
+        }
+        input {
+          height: 50px;
+        }
+        textarea {
+          height: 300px;
+          margin-bottom: 10px;
+        }
+        .btn {
+          color: $color_3;
+          border-color: $border-color_2;
+          cursor: pointer;
+          &:hover {
+            color: $color_4;
+          }
+          &::before {
+            background-color: $background-color_3;
+          }
+        }
+      }
+    }
+  }
+  section#book-a-table {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: $background-color_4;
+    color: $color_5;
+    .header {
+      text-align: center;
+      width: 85%;
+      .title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+    form {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 90%;
+      .hidden {
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+      }
+      .form-element {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        border-radius: 0;
+        border: 1px solid #8c8e9a;
+        background-color: $background-color_3;
+        color: $color_5;
+        outline: none;
+        font-size: 1.5rem;
+        &:focus-visible {
+          border-color: $border-color_3;
+        }
+      }
+      .btn {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+        height: 60px;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  main #website-name.contact ~ {
+    .top-section {
+      .slogan {
+        top: 20%;
+      }
+    }
+    .section-1 {
+      gap: 60px;
+      padding-bottom: 60px;
+      .content {
+        flex-direction: row-reverse;
+        gap: 40px;
+        width: 80%;
+        .contact-info {
+          gap: 40px;
+        }
+        form {
+          .btn {
+            width: calc(150px + 18vw);
+            height: 50px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    section#book-a-table {
+      form {
+        width: min(85vw, 1700px);
+        grid-template-columns: 1fr 1fr;
+        .btn {
+          width: 600px;
+          justify-self: center;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
