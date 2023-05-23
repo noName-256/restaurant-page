@@ -1,4 +1,4 @@
-import initHeaders from "./headers.js";
+import * as headers from "./headers.js";
 import "../styles/scss/style.scss";
 import "../styles/scss/about-us-style.scss";
 import "../styles/scss/menus-style.scss";
@@ -17,6 +17,14 @@ import SwupScrollPlugin from "@swup/scroll-plugin";
 import SwupProgressPlugin from "@swup/progress-plugin";
 import SwupA11yPlugin from "@swup/a11y-plugin";
 
+let scrollOffset;
+let runningOnDesktop = window.innerWidth > 1200;
+if (runningOnDesktop) {
+  scrollOffset = 100;
+} else {
+  scrollOffset = 0;
+}
+
 const swup = new Swup({
   plugins: [
     new SwupFadeTheme(),
@@ -26,13 +34,13 @@ const swup = new Swup({
         samePageWithHash: false,
         samePage: true,
       },
-      offset: 100,
+      offset: scrollOffset,
     }),
     new SwupProgressPlugin({ delay: 0 }),
     new SwupA11yPlugin(),
   ],
 });
-initHeaders();
+headers.initHeaders();
 selectCurrentNavElement();
 function addCustomScript() {
   let websiteName = document.querySelector("#website-name").className;
@@ -43,7 +51,7 @@ function addCustomScript() {
   }
 }
 function loadWebsiteSpecificContent() {
-  console.log("trying to load new content");
+  headers.initSecondaryNavMenuAgain();
   addCustomScript();
 }
 
